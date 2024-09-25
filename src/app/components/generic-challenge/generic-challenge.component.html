@@ -1,0 +1,23 @@
+<div class="terminal-container">
+    <div class="question">
+        <ng-content></ng-content>
+    </div>
+    <div class="prompt-container">
+        <div class="prompt">{{ prompt }}
+            <div class="input-wrapper">
+                <input 
+                    type="text" 
+                    [(ngModel)]="userInput" 
+                    (input)="updateCursorPosition()" 
+                    (keydown)="handleInput($event)" 
+                    class="transparent-input" 
+                    #inputElement
+                    maxlength="15"
+                    autofocus 
+                />
+                <span class="blinking-cursor" #cursorElement></span>
+            </div>
+        </div>
+    </div>
+    <div class="typing {{isAnswerCorrect}}">{{ typingText }}</div>
+</div>

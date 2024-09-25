@@ -1,26 +1,11 @@
-<div class="terminal-container">
-    <div class="question">
-        You are given the following image. <br/>
-        <img class="question-image" src="assets/what-is-the-answer.jpg"/> <br/>
-        To uncover your next clue, decipher what lies beneath the surface. <br/>
-        Yes, your answer lies somewhere in this image. <br/>
-        Type your answer next to the prompt and hit 'Enter' to submit your response. <br/>
-    </div>
-    <div class="prompt-container">
-        <div class="prompt">{{ prompt }}
-            <div class="input-wrapper">
-                <input 
-                    type="text" 
-                    [(ngModel)]="userInput" 
-                    (input)="updateCursorPosition()" 
-                    (keydown)="handleInput($event)" 
-                    class="transparent-input" 
-                    #inputElement
-                    autofocus 
-                />
-                <span class="blinking-cursor" #cursorElement></span>
-            </div>
-        </div>
-    </div>
-    <div class="typing {{isAnswerCorrect}}">{{ typingText }}</div>
-</div>
+<app-generic-challenge 
+  [prompt]="'digital-detectives@challenge1:~$ '"
+  [challengeKey]="challenge1key"
+  [nextChallengeRoute]="challenge2key"
+>
+  You are given the following image. <br/>
+  <img class="question-image" src="assets/what-is-the-answer.jpg"/> <br/>
+  To uncover your next clue, decipher what lies beneath the surface. <br/>
+  Yes, your answer lies somewhere in this image. <br/>
+  Type your answer next to the prompt and hit 'Enter' to submit your response. <br/>
+</app-generic-challenge>

@@ -3,12 +3,22 @@ body {
   padding: 0;
   overflow: hidden; /* Prevent scrolling */
   font-family: 'Fira Code', 'Source Code Pro', 'Courier New', monospace !important;
+  background-color: black !important; /* Terminal background */
+}
+
+body.winner-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/fireworks.gif') no-repeat center 20% fixed !important;
+  background-size: cover !important;
 }
 
 .terminal {
   height: 100vh; /* Full height */
   width: 100vw; /* Full width */
-  background-color: black; /* Terminal background */
   color: white; /* Default text color */
   display: flex;
   flex-direction: column;
