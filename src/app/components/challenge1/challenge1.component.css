@@ -1,0 +1,34 @@
+.transparent-input {
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  font: inherit;
+  width: auto;
+  caret-color: transparent; /* Makes the cursor transparent */
+}
+
+.input-wrapper {
+  display: inline-block;
+  position: relative;
+}
+
+.blinking-cursor {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background: white;
+  animation: blink 1s step-end infinite;
+  position: absolute;
+  margin-top: 4px;
+  left: 0;
+}
+
+@keyframes blink {
+  from, to {
+    background: transparent;
+  }
+  50% {
+    background: white;
+  }
+}

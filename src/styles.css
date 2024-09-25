@@ -1,1 +1,82 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling */
+  font-family: 'Fira Code', 'Source Code Pro', 'Courier New', monospace !important;
+}
+
+.terminal {
+  height: 100vh; /* Full height */
+  width: 100vw; /* Full width */
+  background-color: black; /* Terminal background */
+  color: white; /* Default text color */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.cursor {
+  color: white; /* Cursor color */
+  animation: blink 1s step-end infinite; /* Blinking effect */
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+  
+.prompt-container {
+  display: flex;
+  min-width: 500px;
+}
+
+.prompt {
+  color: cyan; /* Cyan color for the prompt */
+  margin-right: 5px; /* Spacing */
+}
+
+.prompt-text {
+  margin-right: 5px; /* Spacing */
+}
+
+.user-input {
+  color: white;
+}
+
+.question {
+  padding-right: 250px;
+  padding-left: 250px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.question-image {
+  max-width: 300px;
+}
+
+.terminal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white; /* Text color */
+  height: 100%; /* Full height */
+}
+
+.typing {
+  margin-top: 10px;
+  white-space: pre; /* Preserve whitespace */
+  color: yellow; /* Typing text color */
+}
+
+.typing.false {
+  color: red; /* Typing text color */
+}
+
+.typing.true {
+    color: greenyellow; /* Typing text color */
+}
