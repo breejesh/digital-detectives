@@ -1,9 +1,29 @@
-<app-generic-challenge 
-  [prompt]="'challenge5:~$ '"
-  [challengeKey]="challenge5key"
-  [nextChallengeRoute]="winKey"
->
-  Here is another challenge for you. <br/>
-  Solve the puzzle to proceed. <br/>
-  Type your answer next to the prompt and hit 'Enter' to submit your response. <br/>
-</app-generic-challenge>
+<div class="terminal-container">
+  <div class="question">
+    [Welcome to the <span class="text-red">SkynetGPT</span> Terminal] <br/>
+    You are now connected to main supercomputer file system.<br/><br/> Your mission is to delete all files related to SkynetGPT to destory it.
+  </div>
+  <div class="terminal-output">
+    <div *ngFor="let line of terminalOutput">
+      <span>{{ line }}</span>
+    </div>
+  </div>
+  <div class="prompt-container">
+      <div class="prompt"> <span class="prompt-prefix">root&#64;</span><span class="text-red">skynet:~$ </span>
+          <div class="input-wrapper">
+              <input 
+                  type="text" 
+                  [(ngModel)]="userInput" 
+                  (input)="updateCursorPosition()" 
+                  (keydown)="handleInput($event)" 
+                  class="transparent-input" 
+                  #inputElement
+                  maxlength="20"
+                  autofocus 
+              />
+              <span class="blinking-cursor" #cursorElement></span>
+          </div>
+      </div>
+  </div>
+  <div class="typing {{isAnswerCorrect}}">{{ typingText }}</div>
+</div>
