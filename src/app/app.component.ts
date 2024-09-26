@@ -21,7 +21,6 @@ export class AppComponent implements OnInit {
 
   updateProgress() {
     const url = window.location.href.split('/').pop();
-    console.log(url);
     switch (url) {
       case '':
         this.progress = 0;
