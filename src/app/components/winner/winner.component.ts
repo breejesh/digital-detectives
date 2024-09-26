@@ -6,7 +6,6 @@ import { Component, HostListener, Renderer2 } from '@angular/core';
   styleUrls: ['./winner.component.css']
 })
 export class WinnerComponent {
-  prompt = "digital-detectives@complete:~$";
   
   constructor(private renderer: Renderer2) {}
 

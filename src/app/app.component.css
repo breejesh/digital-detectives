@@ -1,3 +1,56 @@
 .text-art {
-    color: cyan;
+  color: cyan;
+  scale: 0.7;
+  margin: 0;
+}
+
+pre {
+  margin: 0;
+}
+
+.progress-container {
+  width: 600px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #333;
+  border: 1px solid #555;
+  margin-bottom: 20px;
+  height: 20px; /* Adjust the height as needed */
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  background-color: cyan;
+  width: 0; /* Initial width */
+  transition: width 0.5s;
+  border-radius: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: -25px; /* Adjusted to make sure the arrow is visible */
+  left: 0;
+  font-size: 20px; /* Adjust the size as needed */
+  color: white;
+  transition: left 0.5s;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.current-question {
+  position: absolute;
+  top: -30px; /* Adjust as needed */
+  left: 0;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  transition: left 0.5s;
 }

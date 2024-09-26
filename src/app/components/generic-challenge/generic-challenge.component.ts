@@ -68,7 +68,7 @@ export class GenericChallengeComponent implements OnInit, AfterViewInit, OnDestr
         this.typingText = 'Correct! Navigating to the next challenge...';
         setTimeout(() => {
           this.goToNextChallenge();
-        }, 2000);
+        }, 1000);
       } else {
         this.isAnswerCorrect = false;
         this.typingText = 'Incorrect answer. Please try again.';

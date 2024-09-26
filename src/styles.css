@@ -45,8 +45,12 @@ body.winner-background {
   min-width: 500px;
 }
 
+.prompt-prefix {
+  color: lawngreen;
+}
+
 .prompt {
-  color: cyan; /* Cyan color for the prompt */
+  color: cyan;
   margin-right: 5px; /* Spacing */
 }
 
@@ -59,14 +63,14 @@ body.winner-background {
 }
 
 .question {
-  padding-right: 250px;
-  padding-left: 250px;
+  padding-right: 200px;
+  padding-left: 200px;
   padding-bottom: 30px;
   text-align: center;
 }
 
 .question-image {
-  max-width: 300px;
+  max-width: 250px;
 }
 
 .terminal-container {
@@ -80,7 +84,7 @@ body.winner-background {
 .typing {
   margin-top: 10px;
   white-space: pre; /* Preserve whitespace */
-  color: yellow; /* Typing text color */
+  color: orange; /* Typing text color */
 }
 
 .typing.false {
@@ -88,5 +92,17 @@ body.winner-background {
 }
 
 .typing.true {
-    color: greenyellow; /* Typing text color */
+    color: lawngreen; /* Typing text color */
+}
+
+.text-red {
+  color: red;
+}
+
+.text-cyan {
+  color: cyan;
+}
+
+.text-green {
+  color: lawngreen;
 }

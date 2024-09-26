@@ -3,7 +3,7 @@
         <ng-content></ng-content>
     </div>
     <div class="prompt-container">
-        <div class="prompt">{{ prompt }}
+        <div class="prompt"> <span class="prompt-prefix">root&#64;</span>{{ prompt }}
             <div class="input-wrapper">
                 <input 
                     type="text" 
@@ -12,7 +12,7 @@
                     (keydown)="handleInput($event)" 
                     class="transparent-input" 
                     #inputElement
-                    maxlength="15"
+                    maxlength="20"
                     autofocus 
                 />
                 <span class="blinking-cursor" #cursorElement></span>
