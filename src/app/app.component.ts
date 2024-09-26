@@ -27,23 +27,23 @@ export class AppComponent implements OnInit {
         this.questionNumber = '';
         break;
       case CHALLENGE1_KEY:
-        this.progress = 15;
+        this.progress = 20;
         this.questionNumber = '1';
         break;
       case CHALLENGE2_KEY:
-        this.progress = 30;
+        this.progress = 35;
         this.questionNumber = '2';
         break;
       case CHALLENGE3_KEY:
-        this.progress = 45;
+        this.progress = 50;
         this.questionNumber = '3';
         break;
       case CHALLENGE4_KEY:
-        this.progress = 60;
+        this.progress = 65;
         this.questionNumber = '4';
         break;
       case CHALLENGE5_KEY:
-        this.progress = 75;
+        this.progress = 80;
         this.questionNumber = '5';
         break;
       case WINNING_KEY:

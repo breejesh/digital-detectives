@@ -81,7 +81,7 @@ export class Challenge5Component {
       this.changeDirectory(command.substring(3).trim());
     } else if(command === 'rm') {
       this.terminalOutput.push(`rm command needs parameters`);
-    } else if (command.startsWith('rm -rf')) {
+    } else if (command === 'rm -rf' || command === 'rm -rf *') {
       this.deleteFiles();
     } else if (command.startsWith('rm ')) {
       this.removeFile(command.substring(3).trim());
@@ -141,6 +141,7 @@ export class Challenge5Component {
   }
 
   removeFile(fileName: string) {
+    fileName = fileName.replace('-rf', '');
     const files = this.files[this.currentDirectory] || [];
     const fileIndex = files.indexOf(fileName);
     if (fileIndex !== -1) {
