@@ -23,7 +23,7 @@ export class Challenge5Component {
   // Simulated files and directories
   files: any = {
     'home/user': ['documents', 'downloads', 'system'],
-    'home/user/system': ['classified_data.txt', 'targets.data', 'skynet_gpt.model'],
+    'home/user/system': ['skynet_gpt.backup', 'skynet_gpt.bak', 'skynet_gpt.model'],
     'home/user/downloads': ['m2p_video.mp4', 'prod_backup.sql'],
     'home/user/documents': ['brd.pdf', 'resume.pdf', 'test_cases.pdf'],
   };
@@ -75,11 +75,13 @@ export class Challenge5Component {
     const command = this.userInput.trim();
     this.terminalOutput = []; // Clear previous output
 
-    if (command === 'ls') {
+    if (command === 'ls' || command === 'dir') {
       this.listFiles();
     } else if (command.startsWith('cd ')) {
       this.changeDirectory(command.substring(3).trim());
-    } else if (command === 'rm -rf *') {
+    } else if(command === 'rm') {
+      this.terminalOutput.push(`rm command needs parameters`);
+    } else if (command.startsWith('rm -rf')) {
       this.deleteFiles();
     } else if (command.startsWith('rm ')) {
       this.removeFile(command.substring(3).trim());
@@ -152,6 +154,10 @@ export class Challenge5Component {
 
   deleteFiles() {
     const files = this.files[this.currentDirectory];
+    if(this.currentDirectory === "home/user") {
+      this.terminalOutput.push(`You cannot run this command here`);
+      return;
+    }
     if (files) {
       this.terminalOutput.push(`Deleted: ${files.join(', ')}`);
       delete this.files[this.currentDirectory]; // Simulate deletion
