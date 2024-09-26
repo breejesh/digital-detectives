@@ -27,7 +27,7 @@ pre {
   height: 100%;
   background-color: cyan;
   width: 0; /* Initial width */
-  transition: width 0.5s;
+  transition: width 1s;
   border-radius: 0;
 }
 

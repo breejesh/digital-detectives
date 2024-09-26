@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CHALLENGE1_KEY, CHALLENGE2_KEY, CHALLENGE3_KEY, CHALLENGE4_KEY, CHALLENGE5_KEY, WINNING_KEY } from './app-routing-constants';
 
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   progress = 0;
   questionNumber = '';
 
-  constructor(private router: Router, private renderer: Renderer2) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     this.router.events.subscribe((event: any) => {
@@ -53,14 +53,6 @@ export class AppComponent implements OnInit {
       default:
         this.progress = 0;
         break;
-    }
-
-    const progressBar = document.querySelector('.progress');
-    const currentQuestion = document.getElementById('current-question');
-    if (progressBar && currentQuestion) {
-      this.renderer.setStyle(progressBar, 'width', `${this.progress}%`);
-      this.renderer.setStyle(currentQuestion, 'left', `calc(${this.progress}% - 10px)`);
-      this.renderer.setProperty(currentQuestion, 'textContent', this.questionNumber);
     }
   }
 }

@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { CHALLENGE1_KEY } from 'src/app/app-routing-constants';
 
 @Component({
@@ -8,6 +9,9 @@ import { CHALLENGE1_KEY } from 'src/app/app-routing-constants';
 })
 export class HomeComponent {
   prompt = "digital-detectives@home:~$";
+
+  constructor(private router: Router) {}
+
   @HostListener('window:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key === 'Enter') {
@@ -16,7 +20,6 @@ export class HomeComponent {
   }
 
   startGame() {
-    // Logic to navigate to the home or challenge component
-    window.location.href = '/' + CHALLENGE1_KEY; // Adjust as needed
+    this.router.navigate([CHALLENGE1_KEY]);
   }
 }

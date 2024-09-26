@@ -10,14 +10,14 @@ import { HomeComponent } from './components/home/home.component';
 import { WinnerComponent } from './components/winner/winner.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: CHALLENGE1_KEY, component: Challenge1Component },
   { path: CHALLENGE2_KEY, component: Challenge2Component },
   { path: CHALLENGE3_KEY, component: Challenge3Component },
   { path: CHALLENGE4_KEY, component: Challenge4Component },
   { path: CHALLENGE5_KEY, component: Challenge5Component },
   { path: WINNING_KEY, component: WinnerComponent },
-  { path: '**', redirectTo: '/', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({
