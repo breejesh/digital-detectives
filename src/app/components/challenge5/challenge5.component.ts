@@ -155,7 +155,7 @@ export class Challenge5Component {
   deleteFiles() {
     const files = this.files[this.currentDirectory];
     if(this.currentDirectory === "home/user") {
-      this.terminalOutput.push(`You cannot run this command here`);
+      this.terminalOutput.push(`You cannot run this command in this directory`);
       return;
     }
     if (files) {
