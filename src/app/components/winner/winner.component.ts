@@ -16,6 +16,18 @@ export class WinnerComponent {
     }
   }
 
+  @HostListener('window:click', ['$event'])
+  handleClickEvent(event: MouseEvent) {
+    if (this.isMobileDevice()) {
+      this.startGame();
+    }
+  }
+
+  isMobileDevice(): boolean {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
+
   startGame() {
     this.renderer.removeClass(document.body, 'winner-background');
     window.location.href = '/';
