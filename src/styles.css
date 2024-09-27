@@ -62,13 +62,6 @@ body.winner-background {
   color: white;
 }
 
-.question {
-  padding-right: 200px;
-  padding-left: 200px;
-  padding-bottom: 20px;
-  text-align: center;
-}
-
 .question-image {
   max-width: 250px;
 }
@@ -141,5 +134,40 @@ body.winner-background {
       text-shadow: none;
       transform: translate(0);
       color: white; /* Default color */
+  }
+}
+
+.question {
+  padding-bottom: 20px;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+@media (max-width: 576px) {
+  .question {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  
+  .text-art {
+    scale: 0.5;
+  }
+
+  .terminal-container {
+    max-width: 400px;
+  }
+
+  .prompt-container {
+    min-width: 300px;
+    max-width: 400px;
+  }
+
+  .input-wrapper {
+    scale: 0.9;
+  }
+
+  .terminal-output {
+    min-width: 350px !important;
   }
 }

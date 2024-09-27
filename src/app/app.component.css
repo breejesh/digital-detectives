@@ -54,3 +54,13 @@ pre {
   font-family: 'Courier New', Courier, monospace;
   transition: left 0.5s;
 }
+
+@media (max-width: 576px) {
+  .text-art {
+    scale: 0.4;
+  }
+
+  .progress-container {
+    width: 350px;
+  }
+}
