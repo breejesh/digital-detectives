@@ -65,7 +65,7 @@ export class GenericChallengeComponent implements OnInit, AfterViewInit, OnDestr
     this.answerService.checkAnswer(this.challengeKey, this.userInput).subscribe(response => {
       if (response.status === 'Success') {
         this.isAnswerCorrect = true;
-        this.typingText = 'Correct! Navigating to the next challenge...';
+        this.typingText = 'Correct! Loading next challenge...';
         setTimeout(() => {
           this.goToNextChallenge();
         }, 1000);

@@ -19,6 +19,17 @@ export class HomeComponent {
     }
   }
 
+  @HostListener('window:click', ['$event'])
+  handleClickEvent(event: MouseEvent) {
+    if (this.isMobileDevice()) {
+      this.startGame();
+    }
+  }
+
+  isMobileDevice(): boolean {
+    return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
   startGame() {
     this.router.navigate([CHALLENGE1_KEY]);
   }
