@@ -184,5 +184,8 @@ export class Challenge5Component {
     if (this.clickListener) {
       this.clickListener();
     }
+    try {
+      (document.getElementById('heartbeat') as HTMLAudioElement).pause();
+    } catch (ex) {}
   }
 }

@@ -19,5 +19,8 @@ export class Challenge4Component {
 
   ngOnDestroy(): void {
     this.renderer.removeClass(document.body, 'glitch');
+    try {
+      (document.getElementById('heartbeat') as HTMLAudioElement).play();
+    } catch (ex) {}
   }
 }
