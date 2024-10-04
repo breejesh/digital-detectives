@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AnswerValidationService {
 
-  private apiUrl = 'https://aebf25e7-203c-47af-b14e-3a3e5ff30775.mock.pstmn.io/digital-detectives/api/';
+  private apiUrl = 'https://digital-detectives.azurewebsites.net/api/';
 
   constructor(private http: HttpClient) {}
 
@@ -15,5 +15,16 @@ export class AnswerValidationService {
   checkAnswer(questionKey: string, answer: string): Observable<any> {
     // Send a POST request with the answer
     return this.http.post(this.apiUrl + questionKey, { answer: answer });
+  }
+
+  heartbeat(): void {
+    this.http.get(this.apiUrl + 'heartbeat').subscribe(
+      (response) => {
+        console.log('Heartbeat response:', response);
+      },
+      (error) => {
+        console.error('Heartbeat error:', error);
+      }
+    );
   }
 }
